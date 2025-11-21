@@ -1,0 +1,8 @@
+PASSO A PASSO PARA OS ALUNOS
+
+Próximos passos:
+1. Obtenha sua chave de API: Vá em aistudio.google.com/app/apikey e gere sua chave.
+2. Cole a chave: Substitua a linha const API_KEY = 'SUA_CHAVE_AQUI'; pela sua chave real.
+3. Salve e teste: Salve o arquivo e abra-o no seu navegador. Seu chatbot estará pronto para conversar!
+4. O chatbot deve ser atualizado periodicamente. 
+

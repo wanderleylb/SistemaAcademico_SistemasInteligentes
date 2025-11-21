@@ -1,0 +1,58 @@
+COMO GERAR O LINK PADRÃO DO GOOGLE MAPS EMBED
+
+1. Abra o Google Maps
+
+Entre em: https://maps.google.com
+
+(e só digitar o endereço na busca)
+
+
+2. Pesquise o endereço desejado
+
+Exemplo:
+Rua Padre Pedro Pinto, 442 – Venda Nova, Belo Horizonte – MG
+
+
+3. Clique em “Compartilhar”
+
+No painel lateral, clique no botão Compartilhar.
+
+
+4. Vá na aba “Incorporar um mapa”
+
+Depois aparecerá a opção:
+
+
+INCORPORAR UM MAPA (Embed map)
+
+5. Copie o código <iframe>
+
+O Google irá gerar um iframe como este:
+
+<iframe src="https://www.google.com/maps/embed?pb=XXXXXXXX"></iframe>
+
+
+Esse é o código oficial Google Maps Embed, ideal para colocar dentro de qualquer página HTML.
+
+----------------------------------------------------------------------------------------------
+
+MÉTODO ALTERNATIVO: CRIAR O LINK EMBED MANUALMENTE
+
+
+Você também pode gerar o link sem chave API, usando esta estrutura:
+
+https://www.google.com/maps?q=ENDERECO&output=embed
+
+
+Exemplo para a PROZ Venda Nova:
+https://www.google.com/maps?q=Rua Padre Pedro Pinto, 442 Venda Nova Belo Horizonte MG&output=embed
+
+
+USANDO NO HTML:
+
+<iframe 
+    src="https://www.google.com/maps?q=Rua Padre Pedro Pinto, 442 Venda Nova Belo Horizonte MG&output=embed"
+    width="100%" height="450" style="border:0;" allowfullscreen loading="lazy">
+</iframe>
+
+loading="lazy"  Faz o mapa carregar apenas quando estiver visível na tela, economizando desempenho

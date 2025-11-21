@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- 
+    Referências úteis:
+    https://www.w3schools.com/
+    https://pt.stackoverflow.com/questions/280758/mascara-no-form-somente-em-html-e-css
+-->
+
+<head>
+    <!-- Declaração do conjunto de caracteres usado -->
+    <meta charset="UTF-8">
+
+    <!-- Autor da página -->
+    <meta name="author" content="Wanderley Lopes Batista">    
+
+    <!-- Configuração para o site ser responsivo em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">                     
+
+    <!-- Título que aparece na aba do navegador -->
+    <title>Sistema Acadêmico</title>
+
+    <!-- Importação do arquivo CSS externo -->
+    <link rel="stylesheet" href="css/estilo.css">
+	     
+</head>
+
+<body>
+
+<!-- Cabeçalho principal da página -->
+
+    <h2>PROZ EDUCAÇÃO / VN</h2>
+
+<!-- Menu de navegação principal -->
+
+    <ul class="menu">
+        <li><a href="cadastro_aluno.html">CADASTRO ALUNOS</a></li>
+        <li><a href="#">CADASTRO PROFESSOR</a></li>
+        <li><a href="#">CADASTRO CURSO</a></li>
+        <li><a href="#">MATRÍCULA</a></li>
+    </ul>
+
+<!-- Imagem da página inicial do sistema -->
+<img id="banner" src="imagem/logotipo.jpg" alt="Imagem do Sistema Acadêmico">
+
+<!-- Caixa de informações com título -->
+<fieldset>
+
+    <legend>PÁGINA INICIAL</legend>
+
+    <p id="bem_vindo">
+        Bem-vindo ao Controle Acadêmico.<br><br>
+        Você poderá consultar suas notas e também suas frequências.
+	</p>
+
+    <hr>
+
+    <p>
+        <strong>Nota média para aprovação:</strong>  
+        Essa média é alcançada através da média aritmética das notas da Avaliação Formativa, Atividade Avaliativa,
+        e Atividade na Plataforma da instituição.
+		Aprovado: Nota Igual ou maior que 6 
+	</p>
+	<br>
+
+    <p>
+        <strong>Frequência para aprovação:</strong>  
+        Faltas justificadas através de requisição apresentada pelo aluno serão abonadas.
+		Frequência igual ou maior que75%
+    </p>
+	<br>
+	
+	 <p>
+        <strong>Recuperação:</strong>  
+        Nota entre 4 e 5,5
+    </p>
+	<br>
+	
+	<p>
+        <strong>Reclassificação:</strong>   
+      Nota igual ou maior que 6 e Frequência abaixo de 75%
+    </p>
+	<br>
+
+	<p>
+        <strong>Reprovado:</strong>   
+        Nota Menor que 4
+    </p>
+	
+	
+	
+</fieldset>
+
+<br>
+<br>
+
+<!-- EXIBIR DUAS PÁGINAS INTERNAS NO CANTO INFERIOR - UMA DO LADO DA OUTRA 
+
+<!-- Container dos iframes -->
+<div style="display: flex; gap: 20px; justify-content: center; margin-top: 40px;">
+
+    <!-- Página do Quiz -->
+    <iframe src="quizz.html" 
+        style="width: 48%; height: 500px; border: 2px solid #fff; border-radius: 10px;">
+    </iframe>
+
+    <!-- Página de Localização -->
+    <iframe src="localizacao_google_maps.html" 
+        style="width: 48%; height: 500px; border: 2px solid #fff; border-radius: 10px;">
+    </iframe>
+
+</div>
+<br>
+<br>
+
+<!-- display: flex; → coloca os elementos lado a lado
+
+gap: 20px; → espaço entre os quadros
+
+width: 48%; → cada iframe ocupa metade da página
+
+height: 400px; → altura ajustável
+
+border-radius / border → apenas para estética (pode remover)
+-->
+
+
+
+<div style="display: flex; gap: 20px; justify-content: center; margin-top: 40px;">
+
+    <!-- Página do Chatbot-->
+    <iframe src="chatbot_aberto.html" 
+        style="width: 48%; height: 500px; border: 2px solid #fff; border-radius: 10px;">
+    </iframe>
+
+    <!-- Página de Deficientes Visuais -->
+    <iframe src="deficientes_visuais.html" 
+        style="width: 48%; height: 500px; border: 2px solid #fff; border-radius: 10px;">
+    </iframe>
+
+</div>
+
+<!-- Rodapé da página -->
+<footer>
+    <p>
+        <a href="mailto:wanderleylb@gmail.com">Author: Wanderley Lopes Batista</a> - 
+        WLB Qualidade & Desenvolvimento LTDA - Todos os direitos reservados
+    </p>
+</footer>
+
+</body>
+</html>

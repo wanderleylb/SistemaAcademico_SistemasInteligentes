@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Quiz Simples</title>
+
+<style>
+    body { background:#000; color:#fff; font-family:Arial; padding:20px; }
+    .box { background:#111; padding:20px; border-radius:10px; max-width:450px; margin:auto; }
+    .op { background:#222; padding:10px; margin:10px 0; cursor:pointer; }
+    .correta { background:green; }
+    .errada { background:darkred; }
+</style>
+</head>
+
+<body>
+
+<h2>Quiz Simples</h2>
+
+<div class="box">
+    <h3 id="pergunta"></h3>
+    <div id="opcoes"></div>
+    <p id="mensagem"></p>
+    <button id="btnProxima">Próxima</button>
+</div>
+
+<script>
+// ---------------------------------------------------------
+// Perguntas sobre matrícula
+// ---------------------------------------------------------
+const perguntas = [
+    {
+        texto: "Qual documento o aluno precisa apresentar ao iniciar a matrícula?",
+        opcoes: [
+            { texto:"Comprovante de residência", correta:false },
+            { texto:"RG ou CPF", correta:true },
+            { texto:"Foto do responsável", correta:false }
+        ]
+    },
+    {
+        texto: "Qual dado de contato é obrigatório no cadastro do aluno?",
+        opcoes: [
+            { texto:"Telefone ou e-mail válido", correta:true },
+            { texto:"Usuário do Instagram", correta:false },
+            { texto:"Número da carteira de trabalho", correta:false }
+        ]
+    },
+    {
+        texto: "Antes de concluir a matrícula, o aluno deve verificar:",
+        opcoes: [
+            { texto:"Se o curso possui vagas disponíveis", correta:true },
+            { texto:"Se a escola tem estacionamento", correta:false },
+            { texto:"Se o campus tem cantina", correta:false }
+        ]
+    },
+    {
+        texto: "Após finalizar a matrícula, o sistema gera:",
+        opcoes: [
+            { texto:"Número de matrícula", correta:true },
+            { texto:"Cartão de crédito estudantil", correta:false },
+            { texto:"Acesso automático a todos os cursos", correta:false }
+        ]
+    },
+    {
+        texto: "Para escolher a turma, o aluno deve:",
+        opcoes: [
+            { texto:"Selecionar o horário disponível que deseja", correta:true },
+            { texto:"Criar uma turma nova no sistema", correta:false },
+            { texto:"Aguardar seleção automática", correta:false }
+        ]
+    }
+];
+
+
+// ---------------------------------------------------------
+// Variáveis
+// ---------------------------------------------------------
+let indice = 0;
+let acertos = 0;
+let erros = 0;
+
+const elemPergunta = document.getElementById("pergunta");
+const elemOpcoes   = document.getElementById("opcoes");
+const elemMsg      = document.getElementById("mensagem");
+const btnProxima   = document.getElementById("btnProxima");
+
+
+// ---------------------------------------------------------
+// Embaralhar opções
+// ---------------------------------------------------------
+function embaralhar(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+
+// ---------------------------------------------------------
+// Mostrar pergunta
+// ---------------------------------------------------------
+function mostrarPergunta() {
+    const atual = perguntas[indice];
+
+    embaralhar(atual.opcoes);
+
+    elemPergunta.textContent = atual.texto;
+    elemOpcoes.innerHTML = "";
+    elemMsg.textContent = "";
+    btnProxima.style.display = "block";
+
+    atual.opcoes.forEach(op => {
+        const botao = document.createElement("div");
+        botao.className = "op";
+        botao.textContent = op.texto;
+
+        botao.onclick = () => {
+            if (op.correta) {
+                botao.classList.add("correta");
+                elemMsg.textContent = "Acertou!";
+                acertos++;
+            } else {
+                botao.classList.add("errada");
+                elemMsg.textContent = "Errou!";
+                erros++;
+            }
+
+            // desativa clique nas outras opções
+            const botoes = document.querySelectorAll(".op");
+            botoes.forEach(b => b.onclick = null);
+        };
+
+        elemOpcoes.appendChild(botao);
+    });
+}
+
+
+// ---------------------------------------------------------
+// Botão Próxima
+// ---------------------------------------------------------
+btnProxima.onclick = () => {
+    indice++;
+
+    if (indice >= perguntas.length) {
+        mostrarResultadoFinal();
+        return;
+    }
+
+    mostrarPergunta();
+};
+
+
+// ---------------------------------------------------------
+// Resultado final
+// ---------------------------------------------------------
+function mostrarResultadoFinal() {
+    elemPergunta.textContent = "Fim do Quiz!";
+    elemOpcoes.innerHTML = "";
+    elemMsg.innerHTML = 
+        "<strong>Acertos:</strong> " + acertos + "<br>" +
+        "<strong>Erros:</strong> " + erros;
+
+    btnProxima.style.display = "none";  // remove o botão no final
+}
+
+
+// ---------------------------------------------------------
+// Iniciar
+// ---------------------------------------------------------
+mostrarPergunta();
+</script>
+
+</body>
+</html>

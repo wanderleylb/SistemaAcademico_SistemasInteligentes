@@ -1,0 +1,84 @@
+
+<!-- Não precisa de chave de API, usado o Google Maps Embed padrão, que funciona em qualquer navegador.
+
+     Div que agrupa o conteúdo relacionado ao mapa 
+
+     Iframe é utilizado para incorporar (embed) serviços externos, como o Google Maps 
+	 
+     loading="lazy"  Faz o mapa carregar apenas quando estiver visível na tela, economizando desempenho
+     
+	 allowfullscreen  Permite que o mapa seja exibido em tela cheia se o usuário desejar
+	 
+	 referrerpolicy="no-referrer-when-downgrade" Envie o referer somente se não houver risco de segurança; 
+	 caso contrário, não envie nada.”
+     
+	 'q=' define o endereço pesquisado 
+      
+	 'output=embed' informa ao Google Maps para gerar a versão incorporada -->
+    
+	</iframe>
+
+</div>
+
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<title>Mapa – PROZ Educação Venda Nova</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #000;
+        color: #fff;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+        background: #111;
+        padding: 20px;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .container {
+        padding: 20px;
+        text-align: center;
+    }
+
+    iframe {
+        width: 100%;
+        height: 450px;
+        border: 0;
+        border-radius: 12px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>Localização – PROZ Educação Venda Nova</header>
+
+<div class="container">
+
+    <h3>Rua Padre Pedro Pinto, 442 – Venda Nova, Belo Horizonte – MG</h3>
+
+    <!-- MAPA DO GOOGLE MAPS -->
+    <iframe
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Rua%20Padre%20Pedro%20Pinto%20442%20Venda%20Nova%20Belo%20Horizonte%20MG&output=embed">
+    </iframe>
+
+</div>
+
+</body>
+</html>
+
